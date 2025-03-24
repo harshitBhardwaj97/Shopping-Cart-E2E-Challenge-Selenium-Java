@@ -2,10 +2,10 @@ package com.harshitbhardwaj.pages;
 
 import com.harshitbhardwaj.model.Item;
 import com.harshitbhardwaj.support.PageInteractionHelper;
-import com.harshitbhardwaj.utils.LocatorUtils;
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 
+import static com.harshitbhardwaj.utils.LocatorUtils.createXpathFromSections;
 import static com.harshitbhardwaj.utils.Utils.extractItemPrice;
 
 /**
@@ -19,9 +19,7 @@ public class ItemInfoPage {
     private final By itemName = By.xpath("//h1[contains(@class,'name')]");
     private final By addToBagButton = By.xpath("//div[contains(@class,'add-to-bag') and .='ADD TO BAG']");
     private final By goToBagButton = By.xpath("//span[contains(.,'GO TO BAG')]");
-    private final String itemSizeTemplate = LocatorUtils
-            .createXpathFromSections("div[contains(@class,'size-buttons-size-buttons')]", "div[@class='size-buttons-tipAndBtnContainer']",
-                    "button[not(contains(@class,'disabled'))]", "p[@class='size-buttons-unified-size']");
+    private final String itemSizeTemplate = createXpathFromSections("div[contains(@class,'size-buttons-size-buttons')]", "div[@class='size-buttons-tipAndBtnContainer']", "button[not(contains(@class,'disabled'))]", "p[@class='size-buttons-unified-size']");
     private final By itemSize = By.xpath("(" + itemSizeTemplate + ")[1]");
     private final By itemPrice = By.xpath("//p[@class='pdp-discount-container']//span[@class='pdp-price']");
     private final By itemMRP = By.xpath("//p[@class='pdp-discount-container']//span[@class='pdp-mrp']");

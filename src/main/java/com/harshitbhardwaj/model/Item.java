@@ -14,7 +14,6 @@ public class Item {
     private int itemMRP;
 
     public Item() {
-
     }
 
     public Item(String itemName, String itemTitle, String itemSize, String itemSeller,

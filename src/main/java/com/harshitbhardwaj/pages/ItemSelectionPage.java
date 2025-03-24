@@ -1,11 +1,12 @@
 package com.harshitbhardwaj.pages;
 
 import com.harshitbhardwaj.support.PageInteractionHelper;
-import com.harshitbhardwaj.utils.LocatorUtils;
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 
 import java.util.Set;
+
+import static com.harshitbhardwaj.utils.LocatorUtils.createXpathFromSections;
 
 /**
  * @author Harshit Bhardwaj
@@ -13,8 +14,7 @@ import java.util.Set;
 public class ItemSelectionPage {
 
     private final PageInteractionHelper pageInteractionHelper;
-    private final String itemTemplate = LocatorUtils
-            .createXpathFromSections("div[contains(@class,'search-searchProductsContainer')]", "ul", "li");
+    private final String itemTemplate = createXpathFromSections("div[contains(@class,'search-searchProductsContainer')]", "ul", "li");
     private final By currentItem = By.xpath("(" + itemTemplate + ")[1]");
 
     public ItemSelectionPage(PageInteractionHelper pageInteractionHelper) {
